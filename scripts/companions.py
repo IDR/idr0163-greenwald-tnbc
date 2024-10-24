@@ -3,6 +3,7 @@ import sys
 import subprocess
 from ome_model.experimental import Image, create_companion
 from tifffile import tifffile
+import csv
 
 
 def get_dimensions(img_file, order="xyczt"):
@@ -29,7 +30,23 @@ def write_companion(img, img_name, dir):
     print(f"Created {companion_file}")
 
 
+def get_channel_order(file):
+    with open(file, mode='r') as input_file:
+        csv_reader = csv.DictReader(input_file)
+        order = dict()
+        for row in csv_reader:
+            order[row['Channel']] = int(row['Order'])
+        return order
+
+
+if len(sys.argv) < 3:
+    print("Usage: python companions.py IMAGE_ROOT_DIR CHANNEL_MAPPING.csv")
+    print("(Directory layout is supposed to be: IMAGE_ROOT_DIR/IMAGE_NAME/CHANNEL_NAME.tif")
+    exit(1)
+
 sample_dir = pathlib.Path(sys.argv[1])
+channel_order = get_channel_order(pathlib.Path(sys.argv[2]))
+
 for img_dir in sample_dir.iterdir():
     if not img_dir.is_dir():
         continue
@@ -66,8 +83,10 @@ for img_dir in sample_dir.iterdir():
 
     img = Image(img_name, x, y, z, c, t)
     for i, file in enumerate(files):
-        img.add_channel()
-        img.add_plane(c=i)
-        img.add_tiff(file, c=i)
+        name = pathlib.Path(file).stem
+        channel_index = channel_order[name] - 1
+        img.add_channel(name=name)
+        img.add_plane(c=channel_index)
+        img.add_tiff(file, c=channel_index)
 
     write_companion(img, img_name, sample_dir)
