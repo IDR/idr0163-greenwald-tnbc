@@ -39,13 +39,14 @@ def get_channel_order(file):
         return order
 
 
-if len(sys.argv) < 3:
-    print("Usage: python companions.py IMAGE_ROOT_DIR CHANNEL_MAPPING.csv")
+if len(sys.argv) < 4:
+    print("Usage: python companions.py IMAGE_ROOT_DIR CHANNEL_MAPPING.csv .")
     print("(Directory layout is supposed to be: IMAGE_ROOT_DIR/IMAGE_NAME/CHANNEL_NAME.tif")
     exit(1)
 
 sample_dir = pathlib.Path(sys.argv[1])
 channel_order = get_channel_order(pathlib.Path(sys.argv[2]))
+out_dir = pathlib.Path(sys.argv[3])
 
 for img_dir in sample_dir.iterdir():
     if not img_dir.is_dir():
@@ -89,4 +90,4 @@ for img_dir in sample_dir.iterdir():
         img.add_plane(c=channel_index)
         img.add_tiff(file, c=channel_index)
 
-    write_companion(img, img_name, sample_dir)
+    write_companion(img, img_name, out_dir)
