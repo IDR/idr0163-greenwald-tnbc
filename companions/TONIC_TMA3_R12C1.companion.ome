@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Creator="ome_model 6.3.6" UUID="urn:uuid:75fa76bf-449d-49db-8ffb-fd2769b34cc3" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Creator="ome_model 6.3.6" UUID="urn:uuid:27e7c71b-6489-4bd9-a608-6314dd3fe4dd" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
   <Image ID="Image:435" Name="TONIC_TMA3_R12C1">
-    <Pixels ID="Pixels:435:435" DimensionOrder="XYZTC" Type="uint16" SizeX="2048" SizeY="2048" SizeZ="1" SizeT="1" SizeC="51">
+    <Pixels ID="Pixels:435:435" DimensionOrder="XYZTC" Type="uint16" SizeX="2048" SizeY="2048" SizeZ="1" SizeT="1" SizeC="47">
       <Channel ID="Channel:20445" SamplesPerPixel="1" Name="Au"/>
       <Channel ID="Channel:20446" SamplesPerPixel="1" Name="CD11c"/>
       <Channel ID="Channel:20447" SamplesPerPixel="1" Name="CD14"/>
@@ -50,145 +50,145 @@
       <Channel ID="Channel:20490" SamplesPerPixel="1" Name="chan_45"/>
       <Channel ID="Channel:20491" SamplesPerPixel="1" Name="chan_48"/>
       <TiffData FirstC="0" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Au.tiff">urn:uuid:5d90bc98-cf5a-49a4-a4af-b1c5d0029d68</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Au.tiff">urn:uuid:c16be484-4a0e-4c0f-9f2d-47c7be7f949b</UUID>
       </TiffData>
       <TiffData FirstC="5" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD11c.tiff">urn:uuid:373f9808-f13e-497a-916a-383e2eb4e383</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD11c.tiff">urn:uuid:fb465355-15ac-4924-aef8-9dd6cfad72d4</UUID>
       </TiffData>
       <TiffData FirstC="6" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD14.tiff">urn:uuid:15894974-2a06-47c7-b70b-4b5feac9356a</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD14.tiff">urn:uuid:d3a36418-0445-4415-a5d0-277b86421882</UUID>
       </TiffData>
       <TiffData FirstC="17" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD163.tiff">urn:uuid:17ff8526-6856-48ef-9870-43ceafc05294</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD163.tiff">urn:uuid:ab247d8f-0129-41b2-a7da-5cac83826703</UUID>
       </TiffData>
       <TiffData FirstC="7" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD20.tiff">urn:uuid:399f46f0-8c58-41cd-a04a-cd6657dce4fd</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD20.tiff">urn:uuid:47bd15ba-436f-4702-965e-cf9c50eac0b4</UUID>
       </TiffData>
       <TiffData FirstC="2" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD3.tiff">urn:uuid:2e5876bb-58cc-404a-9eb9-4482d4a7d5b2</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD3.tiff">urn:uuid:bc4db15e-0f51-49b1-b480-ccb6e31b1284</UUID>
       </TiffData>
       <TiffData FirstC="8" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD31.tiff">urn:uuid:b5eec827-61b8-46c0-84cc-cc36fd0a640b</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD31.tiff">urn:uuid:a212bb32-6052-4e3a-8975-25dba6e062df</UUID>
       </TiffData>
       <TiffData FirstC="9" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD38.tiff">urn:uuid:017d4ac4-85dc-4c84-a2c8-aaaf30369528</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD38.tiff">urn:uuid:cd74fc2b-7f19-491b-99b2-d71801343400</UUID>
       </TiffData>
       <TiffData FirstC="3" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD4.tiff">urn:uuid:9c7bb634-2dca-401b-bf02-074fbaeb9b24</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD4.tiff">urn:uuid:481895a3-b440-4e21-b197-f91c6c12d962</UUID>
       </TiffData>
       <TiffData FirstC="10" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD45.tiff">urn:uuid:4d4ac128-a471-4a17-bd8d-284f407ca339</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD45.tiff">urn:uuid:e20b6d13-0c33-40e4-82b1-8db51b430cc8</UUID>
       </TiffData>
       <TiffData FirstC="11" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD45RB.tiff">urn:uuid:b3b2ed04-7788-40ab-95f6-771ac3ef7a1f</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD45RB.tiff">urn:uuid:d5afede8-5605-41f7-9a7e-74ce94a73c63</UUID>
       </TiffData>
       <TiffData FirstC="12" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD45RO.tiff">urn:uuid:8ae56bb5-2fde-4a54-9591-2d566bae8752</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD45RO.tiff">urn:uuid:0ea36f90-a122-48db-91b3-52f9af49e0e3</UUID>
       </TiffData>
       <TiffData FirstC="13" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD56.tiff">urn:uuid:5c18aee8-c887-4cb3-80d4-f8798b2d3b63</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD56.tiff">urn:uuid:49509b03-a036-46bd-99c2-a8edd4a21684</UUID>
       </TiffData>
       <TiffData FirstC="14" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD57.tiff">urn:uuid:849b0fa6-b21c-4111-aef2-e25b51f2a273</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD57.tiff">urn:uuid:694ece19-6c6e-4398-8947-acc54bb81c18</UUID>
       </TiffData>
       <TiffData FirstC="15" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD68.tiff">urn:uuid:cca64f74-7588-4346-a1ad-5ae2fe86abd3</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD68.tiff">urn:uuid:ca45c80f-f545-4f9f-b4cd-5660e74c6675</UUID>
       </TiffData>
       <TiffData FirstC="16" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD69.tiff">urn:uuid:0cae961f-bd2c-4a61-a381-6fe674435352</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD69.tiff">urn:uuid:f059d77b-8747-49a0-92fa-768a850ee36a</UUID>
       </TiffData>
       <TiffData FirstC="4" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CD8.tiff">urn:uuid:e10d85a5-c5fe-42ff-99e9-b578a1bda4ad</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CD8.tiff">urn:uuid:f88a551f-b5cb-48a6-92d9-5b9ad5f887a6</UUID>
       </TiffData>
       <TiffData FirstC="19" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/CK17.tiff">urn:uuid:ae19bdc2-ce49-4033-a2c4-23cab7b1aaa3</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/CK17.tiff">urn:uuid:5a648ea1-de8e-4568-b341-ea9dce9f9718</UUID>
       </TiffData>
       <TiffData FirstC="1" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Calprotectin.tiff">urn:uuid:f6e0a09f-27c9-496b-b8d6-908dbd2bac66</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Calprotectin.tiff">urn:uuid:1d4fdb1a-c28c-4cf3-8b6a-bd419d584b35</UUID>
       </TiffData>
       <TiffData FirstC="18" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/ChyTr.tiff">urn:uuid:443a8a84-ab69-4c13-8a24-bca280362f5b</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/ChyTr.tiff">urn:uuid:ecece90b-5866-4e60-9635-60130f5ff907</UUID>
       </TiffData>
       <TiffData FirstC="20" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Collagen1.tiff">urn:uuid:0b368ec5-e8f7-4983-aa1a-d8b8293f6ef8</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Collagen1.tiff">urn:uuid:7f04564a-1ca8-4290-b80f-a88f902cbdc2</UUID>
       </TiffData>
       <TiffData FirstC="21" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/ECAD.tiff">urn:uuid:b05385ad-ee4b-4ac1-8dc0-3dcc8e2df00d</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/ECAD.tiff">urn:uuid:75a69441-32be-4953-b852-2a42cf20088c</UUID>
       </TiffData>
       <TiffData FirstC="22" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/FAP.tiff">urn:uuid:8445413a-89ec-4fa4-aa86-ce5275d2830f</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/FAP.tiff">urn:uuid:091a79db-27a8-4f97-b948-53620e5d3e70</UUID>
       </TiffData>
       <TiffData FirstC="25" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/FOXP3.tiff">urn:uuid:4e0031c3-668f-48ae-b046-76f33b30c36e</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/FOXP3.tiff">urn:uuid:df259c8a-af4b-4df9-92fb-cc145e43a8af</UUID>
       </TiffData>
       <TiffData FirstC="23" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Fe.tiff">urn:uuid:1e36cada-6bdc-4b27-825e-84a7d60dfffb</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Fe.tiff">urn:uuid:71bb33dc-a049-42bc-8188-0ff600e94f2c</UUID>
       </TiffData>
       <TiffData FirstC="24" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Fibronectin.tiff">urn:uuid:906c3a00-8b8a-4810-afd5-4e591c969475</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Fibronectin.tiff">urn:uuid:64d76c02-a761-4625-a53c-f868f3e9a794</UUID>
       </TiffData>
       <TiffData FirstC="26" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/GLUT1.tiff">urn:uuid:058b1831-112d-4c96-90ab-ed88837a5fee</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/GLUT1.tiff">urn:uuid:328a382b-e640-47f7-ac35-254a93b8b495</UUID>
       </TiffData>
       <TiffData FirstC="28" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/H3K27me3.tiff">urn:uuid:7d717f06-d751-4997-9ae8-82e7c20a7682</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/H3K27me3.tiff">urn:uuid:2b1b8514-0d72-4b18-a8fb-51263c2f797f</UUID>
       </TiffData>
       <TiffData FirstC="27" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/H3K9ac.tiff">urn:uuid:85f73122-2ccf-4fe1-851c-806b3b07d90d</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/H3K9ac.tiff">urn:uuid:b6a57a31-ea9d-473b-af7a-8410a8876eee</UUID>
       </TiffData>
       <TiffData FirstC="29" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/HLA1.tiff">urn:uuid:65828e81-e223-4e1e-bc73-4b4533cd71ac</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/HLA1.tiff">urn:uuid:ba9cb69a-4363-417d-92dc-63fb9ee81c50</UUID>
       </TiffData>
       <TiffData FirstC="30" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/HLADR.tiff">urn:uuid:e11218c9-11b8-4677-b969-f28904633a1e</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/HLADR.tiff">urn:uuid:6094bd77-5d0d-49b9-bfdb-f2020a62d68e</UUID>
       </TiffData>
       <TiffData FirstC="31" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/IDO.tiff">urn:uuid:ade5caff-872b-43ef-b0ce-7d33679bfcce</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/IDO.tiff">urn:uuid:15537e1d-b39b-4340-a0ba-4f723ca7caff</UUID>
       </TiffData>
       <TiffData FirstC="32" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Ki67.tiff">urn:uuid:fcc85c2f-42bc-4a91-a238-585d80f73074</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Ki67.tiff">urn:uuid:89d23cad-f342-4d1c-b263-3f08a156b084</UUID>
       </TiffData>
       <TiffData FirstC="33" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/LAG3.tiff">urn:uuid:b298ea64-4d52-44e9-a036-c446042e2288</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/LAG3.tiff">urn:uuid:5c151ec4-52db-4fd2-abfc-431ad71de083</UUID>
       </TiffData>
       <TiffData FirstC="34" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Noodle.tiff">urn:uuid:889d45cf-2bf6-4618-b6a2-2a3e125e6a1b</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Noodle.tiff">urn:uuid:e682e429-d744-40ea-a1fc-7ef13f5dc58d</UUID>
       </TiffData>
       <TiffData FirstC="35" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/PD1.tiff">urn:uuid:278c15b4-6ca0-4f9d-9fad-71683a334a01</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/PD1.tiff">urn:uuid:a99b71bd-37b0-433b-bf8e-30ae4ad87443</UUID>
       </TiffData>
       <TiffData FirstC="36" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/PDL1.tiff">urn:uuid:740cd74b-37a2-495b-9886-8b6ecf9e6c32</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/PDL1.tiff">urn:uuid:7a44afba-a752-4d6b-a908-48235c9bac34</UUID>
       </TiffData>
       <TiffData FirstC="37" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/SMA.tiff">urn:uuid:108b858e-1d23-47c2-b361-ba0fc33591c9</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/SMA.tiff">urn:uuid:c41b1354-1969-4980-ad2c-a4840641ce37</UUID>
       </TiffData>
       <TiffData FirstC="38" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/TBET.tiff">urn:uuid:ee2aacd5-dcae-47ce-a6c8-56c4224da3e6</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/TBET.tiff">urn:uuid:6201f4e2-3425-45fc-90e2-6a72b8900175</UUID>
       </TiffData>
       <TiffData FirstC="39" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/TCF1.tiff">urn:uuid:01d28bcd-ba52-4b7f-bc50-30a6b21768b6</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/TCF1.tiff">urn:uuid:9b1d87a2-7925-42cc-8614-ebcf8b46972e</UUID>
       </TiffData>
       <TiffData FirstC="40" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/TIM3.tiff">urn:uuid:0e81b7df-5d81-428a-9bec-9d59251e6a2e</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/TIM3.tiff">urn:uuid:241a6ac9-402e-4aa0-93ac-5a5e2334fed4</UUID>
       </TiffData>
       <TiffData FirstC="41" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/Vim.tiff">urn:uuid:cadc60b8-1a66-47ea-be80-26a8aebc87d1</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/Vim.tiff">urn:uuid:b09d58ed-a275-4f62-a9ae-e575376f5648</UUID>
       </TiffData>
       <TiffData FirstC="45" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/chan_115.tiff">urn:uuid:c33139eb-d39e-4bf2-a6ca-637cfef1f093</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/chan_115.tiff">urn:uuid:b291f869-a180-428f-a4c6-49eb4966fb20</UUID>
       </TiffData>
       <TiffData FirstC="46" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/chan_141.tiff">urn:uuid:93126e3c-34e1-4fd1-a18c-fca7ecc1b4ff</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/chan_141.tiff">urn:uuid:a9c4d2ee-1a94-4599-8c12-745c1834cbb3</UUID>
       </TiffData>
       <TiffData FirstC="42" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/chan_39.tiff">urn:uuid:69803df6-baa9-4b05-a195-5d1793a1a39e</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/chan_39.tiff">urn:uuid:17337210-f0ad-430a-a7e1-a512b64fde25</UUID>
       </TiffData>
       <TiffData FirstC="43" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/chan_45.tiff">urn:uuid:1876c823-2884-4cab-b384-b66969d72c19</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/chan_45.tiff">urn:uuid:c049a599-38ac-499d-be81-e6187e5d15ec</UUID>
       </TiffData>
       <TiffData FirstC="44" FirstT="0" FirstZ="0">
-        <UUID FileName="TONIC_TMA3_R12C1/chan_48.tiff">urn:uuid:68ed7fcb-4e91-4fb6-ad8a-9b5d4fd9cad8</UUID>
+        <UUID FileName="TONIC_TMA3_R12C1/chan_48.tiff">urn:uuid:aac67191-3e34-47dd-94fc-2f6e02c33d0c</UUID>
       </TiffData>
       <Plane TheC="0" TheZ="0" TheT="0"/>
       <Plane TheC="5" TheZ="0" TheT="0"/>
