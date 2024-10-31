@@ -52,6 +52,12 @@ def process_img_dir(img_dir):
     for img_file in img_dir.iterdir():
         if not img_file.is_file():
             continue
+
+        name = pathlib.Path(img_file).stem
+        if name not in channel_order:
+            print(f"WARN: Can't get channel index for {name}, excluding {img_file}.")
+            continue
+
         dims = get_dimensions(img_file)
         if not dims:
             continue
@@ -79,9 +85,6 @@ def process_img_dir(img_dir):
     img = Image(img_name, x, y, z, c, t)
     for i, file in enumerate(files):
         name = pathlib.Path(file).stem
-        if name not in channel_order:
-            print(f"WARN: Can't get channel index for {name}, excluding {file}.")
-            continue
         channel_index = channel_order[name] - 1
         img.add_channel(name=name)
         img.add_plane(c=channel_index)
