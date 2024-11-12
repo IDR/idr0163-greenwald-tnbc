@@ -1,3 +1,4 @@
+import csv
 import omero
 import omero.cli
 from omero.gateway import BlitzGateway
@@ -26,22 +27,55 @@ pip install ome_model omero-rois scikit-image
 
 
 PROJECT_NAME = "idr0163-greenwald-tnbc/experimentA"
+PROCESSED_NAME = "/tmp/idr0163-experimentA-processed.csv"
+PROCESSED_IMAGE_COL = "fov"
+PROCESSED_CELL_LABEL_COL = "label"
+PROCESSED_NUC_LABEL_COL = "label_nuclear"
+
+TYPE_NUCLEAR = "nuclear"
+TYPE_WHOLE_CELL = "whole cell"
 
 # /bia-idr/S-BIAD1288/TONIC/segmentation_data/deepcell_output/TONIC_TMA10_R10C6_nuclear.tiff
 # /bia-idr/S-BIAD1288/TONIC/segmentation_data/deepcell_output/TONIC_TMA10_R10C6_whole_cell.tiff
+
+def extract_processed_data(image_name):
+    data = []
+    with open(PROCESSED_NAME, mode="r") as csvfile:
+        reader = csv.DictReader(csvfile)
+        fnames = reader.fieldnames.copy()
+        fnames.insert(0, "Image")
+        fnames.insert(0, "Roi")
+        for row in reader:
+            if row[PROCESSED_IMAGE_COL] != image_name:
+                continue
+            row["Image"] = -1
+            row["Roi"] = -1
+            data.append(row)
+    return fnames, data
+
+
+def save_processed(image_name, roi_type, fnames, data):
+    filename = f"{image_name}-{roi_type}_processed.csv"
+    with open(filename, mode="w") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fnames)
+        writer.writeheader()
+        for row in data:
+            writer.writerow(row)
+    print(f"Saved {filename}.")
+
 
 def read_label_image(file):
     image_name = file[file.rfind("/")+1:]
     if "nuclear" in image_name:
         image_name = image_name.replace("_nuclear.tiff", "")
-        roi_name = "nuclear"
+        roi_type = TYPE_NUCLEAR
     elif "_whole_cell" in image_name:
         image_name = image_name.replace("_whole_cell.tiff", "")
-        roi_name = "whole cell"
+        roi_type = TYPE_WHOLE_CELL
     else:
         print(f"Can't handle {file}.")
         exit(1)
-    return image_name, roi_name, imread(file)
+    return image_name, roi_type, imread(file)
 
 
 def load_images(conn):
@@ -70,7 +104,7 @@ def masks_from_label_image(
     :return: A list of OMERO masks in label order ([] if no labels found)
 
     """
-    masks = []
+    masks = dict()
     for i in range(1, labelim.max() + 1):
         if text:
             name = f"{text} {i}"
@@ -80,26 +114,33 @@ def masks_from_label_image(
         bin_image = bin_image[0]
         mask = mask_from_binary_image(bin_image, rgba, z, c, t, name,
                                       raise_on_no_mask)
-        masks.append(mask)
+        masks[str(i)] = mask
     return masks
 
 
-def create_rois(image, roi_name, image_data):
-    masks = masks_from_label_image(image_data, rgba=(255, 255, 255, 128), text=roi_name)
-    rois = []
-    for mask in masks:
+def create_rois(image, roi_type, image_data):
+    masks = masks_from_label_image(image_data, rgba=(255, 255, 255, 128), text=roi_type)
+    rois = dict()
+    for label, mask in masks.items():
         roi = omero.model.RoiI()
         roi.setImage(image._obj)
         roi.addShape(mask)
-        rois.append(roi)
+        rois[label] = roi
     return rois
 
 
-def save_rois(conn, rois):
+def save_rois(conn, rois, roi_type, proc_data):
     us = conn.getUpdateService()
-    for roi in rois:
-        roi1 = us.saveAndReturnObject(roi)
-        assert roi1
+    for label, roi in rois.items():
+        saved = us.saveAndReturnObject(roi)
+        if roi_type == TYPE_NUCLEAR:
+            key = PROCESSED_NUC_LABEL_COL
+        else:
+            key = PROCESSED_CELL_LABEL_COL
+        for row in proc_data:
+            if int(float(row[key])) == int(label):
+                row["Roi"] = saved.getId().getValue()
+                row["Image"] = saved.getImage().getId().getValue()
     print(f"Saved {len(rois)} ROIs.")
 
 
@@ -120,15 +161,17 @@ def main():
     with omero.cli.cli_login() as c:
         conn = BlitzGateway(client_obj=c.get_client())
         images = load_images(conn)
-        image_name, roi_name, data = read_label_image(sys.argv[1])
+        image_name, roi_type, data = read_label_image(sys.argv[1])
         if image_name not in images:
             print(f"Can't find image {image_name}.")
             exit(1)
-        print(f"Processing {roi_name} ROIs for {image_name}.")
-        rois = create_rois(images[image_name], roi_name, data)
+        print(f"Processing {roi_type} ROIs for {image_name}.")
+        rois = create_rois(images[image_name], roi_type, data)
         if len(sys.argv) == 3 and sys.argv[2] == "d":
             delete_rois(conn, images[image_name])
-        save_rois(conn, rois)
+        fnames, proc_data = extract_processed_data(image_name)
+        save_rois(conn, rois, roi_type, proc_data)
+        save_processed(image_name, roi_type, fnames, proc_data)
 
 
 if __name__ == "__main__":
