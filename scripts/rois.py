@@ -28,17 +28,23 @@ pip install ome_model omero-rois scikit-image
 
 PROJECT_NAME = "idr0163-greenwald-tnbc/experimentA"
 PROCESSED_NAME = "/tmp/idr0163-experimentA-processed.csv"
-PROCESSED_IMAGE_COL = "fov"
-PROCESSED_CELL_LABEL_COL = "label"
-PROCESSED_NUC_LABEL_COL = "label_nuclear"
+PROCESSED_IMAGE_COL = "label_image_name"
+PROCESSED_CELL_LABEL_COL = "label_id"
+PROCESSED_NUC_LABEL_COL = "label_nuclear_id"
 
 TYPE_NUCLEAR = "nuclear"
-TYPE_WHOLE_CELL = "whole cell"
+TYPE_WHOLE_CELL = "whole_cell"
 
 # /bia-idr/S-BIAD1288/TONIC/segmentation_data/deepcell_output/TONIC_TMA10_R10C6_nuclear.tiff
 # /bia-idr/S-BIAD1288/TONIC/segmentation_data/deepcell_output/TONIC_TMA10_R10C6_whole_cell.tiff
 
-def extract_processed_data(image_name):
+def extract_processed_data(image_name: str):
+    """
+    Extract the relevant rows from the processed csv
+    for a particular image. Also adds Image and Roi columns.
+    :param image_name: The image name
+    :return: Tuple (header names, rows for the image)
+    """
     data = []
     with open(PROCESSED_NAME, mode="r") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -54,8 +60,18 @@ def extract_processed_data(image_name):
     return fnames, data
 
 
-def save_processed(image_name, roi_type, fnames, data):
-    filename = f"{image_name}-{roi_type}_processed.csv"
+def save_processed(dataset_name: str, image_name: str, roi_type: str, fnames: list, data: dict):
+    """
+    Save the processed csv for an image as
+    {image_name}-{roi_type}_processed.csv
+    :param dataset_name: The dataset name
+    :param image_name: The image name
+    :param roi_type: The roi type (nuclear or whole_cell)
+    :param fnames: The header
+    :param data: The row data
+    :return: None
+    """
+    filename = f"{dataset_name}-{image_name}-{roi_type}_processed.csv"
     with open(filename, mode="w") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fnames)
         writer.writeheader()
@@ -64,7 +80,12 @@ def save_processed(image_name, roi_type, fnames, data):
     print(f"Saved {filename}.")
 
 
-def read_label_image(file):
+def read_label_image(file: str):
+    """
+    Read the provided label image.
+    :param file: The path image path
+    :return: Tuple (the image it refers to, the roi type, the pixel data)
+    """
     image_name = file[file.rfind("/")+1:]
     if "nuclear" in image_name:
         image_name = image_name.replace("_nuclear.tiff", "")
@@ -78,12 +99,17 @@ def read_label_image(file):
     return image_name, roi_type, imread(file)
 
 
-def load_images(conn):
+def load_images(conn: BlitzGateway):
+    """
+    Load all images of the project
+    :param conn: Reference to the BlitzGateway
+    :return: A dictionary of tuples of (dataset, image) with the image name as key
+    """
     project = conn.getObject("Project", attributes={"name": PROJECT_NAME})
     images = dict()
     for dataset in project.listChildren():
         for image in dataset.listChildren():
-            images[image.getName()] = image
+            images[image.getName()] = (dataset, image)
     return images
 
 
@@ -92,7 +118,6 @@ def masks_from_label_image(
         raise_on_no_mask=True):
     """
     Create mask shapes from a label image (background=0)
-
     :param numpy.array labelim: 2D label array
     :param rgba int-4-tuple: Optional (red, green, blue, alpha) colour
     :param z: Optional Z-index for the mask
@@ -166,12 +191,13 @@ def main():
             print(f"Can't find image {image_name}.")
             exit(1)
         print(f"Processing {roi_type} ROIs for {image_name}.")
-        rois = create_rois(images[image_name], roi_type, data)
+        dataset, image = images[image_name]
+        rois = create_rois(image, roi_type, data)
         if len(sys.argv) == 3 and sys.argv[2] == "d":
             delete_rois(conn, images[image_name])
         fnames, proc_data = extract_processed_data(image_name)
         save_rois(conn, rois, roi_type, proc_data)
-        save_processed(image_name, roi_type, fnames, proc_data)
+        save_processed(dataset.getName(), image_name, roi_type, fnames, proc_data)
 
 
 if __name__ == "__main__":
