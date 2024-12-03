@@ -23,6 +23,10 @@ mm env create -n cli python=3.10
 mm activate cli
 mm install omero-py
 pip install ome_model omero-rois scikit-image
+
+
+The generated processed csvs can then be attached like this:
+for i in `ls TONIC_TMA10*`; do echo $i; omero metadata populate Dataset:18454 --file $i --table-name $i; done
 """
 
 
