@@ -1,0 +1,102 @@
+# FILL IN AS MUCH INFORMATION AS YOU CAN.  HINTS HAVE BEEN PUT IN SOME FIELDS AFTER THE HASH # SYMBOL. REPLACE THE HINT WITH TEXT WHERE APPROPRIATE.	
+# STUDY DESCRIPTION SECTION																																	
+# Section with generic information about the study including title, description, publication details (if applicable) and contact details	
+																																	
+Comment[IDR Study Accession]	idr0163																																
+Study Title	Temporal and spatial composition of the tumor microenvironment predicts response to immune checkpoint inhibition						
+Study Type	multiplexed ion beam imaging assay																																	
+Study Type Term Source REF	OBI																																
+Study Type Term Accession	OBI_0003100																																	
+Study Description	Immune checkpoint inhibition (ICI) has fundamentally changed cancer treatment. However, only a minority of patients with metastatic triple negative breast cancer (TNBC) benefit from ICI, and our understanding of the determinants of response is limited. To better understand the factors influencing patient outcome, we assembled a longitudinal cohort with tissue from the primary tumor, pre-treatment metastatic tumor, and on-treatment metastatic tumor from 117 patients treated with ICI (nivolumab) in the phase II TONIC trial. We used highly multiplexed imaging to quantify the subcellular localization of 37 proteins in each tumor. To extract meaningful information from the imaging data, we developed SpaceCat, a computational pipeline that quantifies features from imaging data such as cell density, cell diversity, spatial structure, and functional marker expression. We applied SpaceCat to 678 images from 294 tumors, generating more than 800 distinct features. Numerous spatial features were associated with patient outcome, including the degree of mixing between cancer and immune cells, the diversity of the neighboring immune cells surrounding cancer cells, and the degree of T cell infiltration at the cancer border. Non-spatial features, including the ratio between T cells and cancer cells and PDL1 levels on myeloid cells, were associated with ICI benefit. We did not identify robust predictors of response in the primary tumors. In contrast, the metastatic tumors had numerous features which predicted response. Some of these features, such as the cellular diversity at the cancer border, were shared across distinct timepoints, but many of the features were predictive at only a single timepoint. Multivariate models accurately predicted patient outcome from the pre-treatment metastatic tumors, with improved performance in the on-treatment tumor. We validated our findings in matched bulk RNA-seq data, observing similar longitudinal trends in the predictive power, but were not able to robustly predict outcome using matched pre-treatment exome sequencing data. Our study highlights the importance of profiling sequential tumor biopsies to understand the evolution of the tumor microenvironment, elucidating the temporal and spatial dynamics underlying patient responses to ICI.		
+Study Key Words	tnbc	mibi	triple-negative breast cancer	multiplexed ion beam imaging	mesmer	cancer
+Study Organism	Homo sapiens																																
+Study Organism Term Source REF	NCBITaxon																																
+Study Organism Term Accession	9606																																	
+Study Experiments Number	1																																	
+Study External URL	
+Study BioImage Archive Accession	S-BIAD1288																															
+Study Public Release Date	2024-12-12	
+																																																													
+# Study Publication																																	
+Study PubMed ID																																	
+Study Publication Title	Temporal and spatial composition of the tumor microenvironment predicts response to immune checkpoint inhibition																															
+Study Author List	Greenwald NF, Nederlof I, Sowers C, Ding D, Park S, Kong A, Houlahan K, Varra SR, de Graaf M, Geurts V, Liu CC, Ranek J, Voorwerk L, de Maaker M, Kagel A, McCaffrey E, Khan A, Yeh CY, Camacho C, Khair Z, Bai Y, Piyadasa H, Risom T, Delmastro A, Hartmann F, Mangiante L, Sotomayor C, Schumacher TN, Ma Z, Bosse M, van de Vijver MJ, Tibshirani R, Horlings HM, Curtis C, Kok M, Angelo M   	
+Study PMC ID																																	
+Study DOI																																	
+																																	
+# Study Contacts																																	
+Study Person Last Name	Greenwald	Kong	Varra	Sowers
+Study Person First Name	Noah	Alex	Sricharan Reddy	Cameron																																
+Study Person Email	nfgreen@stanford.edu	alkong@stanford.edu	srivarra@stanford.edu	csowers@stanford.edu
+Study Person Address	1291 Welch Road, Edwards Building, Palo Alto, CA 94305	1291 Welch Road, Edwards Building, Palo Alto, CA 94305	1291 Welch Road, Edwards Building, Palo Alto, CA 94305	1291 Welch Road, Edwards Building, Palo Alto, CA 94305						
+Study Person ORCID	0000-0002-7836-4379	0009-0003-2650-1428	0009-0000-5757-6818																															
+Study Person Roles	First Author	Submitter	Submitter	Submitter
+																													
+																																	
+# Study License and Data DOI																																	
+Study License	CC0 1.0																															
+Study License URL	https://creativecommons.org/publicdomain/zero/1.0/																																	
+Study Copyright	Greenwald et al																																
+Study Data Publisher	University of Dundee																																	
+Study Data DOI																																	
+																																	
+Term Source Name	NCBITaxon	EFO	CMPO	FBbi																													
+Term Source URI	http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/																													
+																																	
+																																	
+# EXPERIMENT SECTION																																	
+# Experiment Section containing all information relative to each experiment in the study including materials used, protocols names and description, phenotype names and description. For multiple experiments this section should be repeated.  Copy and paste the whole section below and fill out for the next experiment
+					
+Experiment Number	1																																
+Comment[IDR Experiment Name]	idr0163-greenwald-tnbc/experimentA	
+Experiment Sample Type	tissue																															
+Experiment Description	Generated 678 FOVs across 111 patients, 294 tissues, and four timepoints (baseline, primary, pre_nivo, and on_nivo), imaged using multiplexed ion beam imaging. Images are either 1024x1024 or 2048x2048 in size.
+Experiment Size	5D Images: 678	Average Image Dimension (XYZCT): XYC	Total Tb:	0.1975
+				
+Experiment Example Images																															
+Experiment Imaging Method	Multiplexed Ion Beam Imaging (MIBI)																																
+Experiment Imaging Method Term Source REF	NCIT																																
+Experiment Imaging Method Term Accession	NCIT_C181930																																
+Experiment Organism																																
+Experiment Organism Term Source REF	NCBITaxon																																
+Experiment Organism Term Accession																																
+Experiment Comments																															
+																																	
+# assay files																																	
+Experiment Assay File	idr0163-experimentA-annotation																															
+Experiment Assay File Format	tab-delimited text																																
+Assay Experimental Conditions																																
+Assay Experimental Conditions Term Source REF																																
+Assay Experimental Conditions Term Accession																																
+Quality Control Description																																
+																																	
+# Protocols																																	
+Protocol Name	image acquisition and feature extraction protocol	data analysis protocol				
+Protocol Type	image acquisition and feature extraction protocol	data analysis protocol						
+Protocol Type Term Source REF																															
+Protocol Type Term Accession																															
+Protocol Description	Images were acquired using the Multiplexed Ion Bean Imagine (MIBI) technique. Prior to analysis, images were denoised to remove channel cross-talk and normalized to account for detector drift over the course of a run. Segmentation was run using the Mesmer algorithm, with corresponding channel signal extracted alongside.	To assign cluster labels to cells, the FlowSOM algorithm was first used at a pixel level to identify high-level pixel SOM clusters, then consensus (meta) clustering was used to broaden these assignments. The expression of pixel meta clusters across cells was then passed through FlowSOM to determine high-level cell SOM clusters, then consensus (meta) clustering was used to broaden these assignments. The cell clusters were then further broadened twice by manual inspection.																
+# Phenotypes																																	
+Phenotype Name																																
+Phenotype Description																																
+Phenotype Score Type																																
+Phenotype Term Source REF	CMPO																																
+Phenotype Term Name																																
+Phenotype Term Accession		 																														
+																																	
+# Feature Level Data Files (give individual file details unless there is one file per well)																																	
+Feature Level Data File Name																																
+Feature Level Data File Format																																
+Feature Level Data File Description																																
+Feature Level Data Column Name																																
+Feature Level Data Column Description																																
+																																	
+#  Processed Data Files 																																	
+Processed Data File Name	idr0163-experimentA-processed																																
+Processed Data File Format	comma-separated value																																
+Processed Data File Description	This file contains the channel expression found in segmented cells across all FOVs, as well as derived spatial features. Each column contains an entry for the whole cell and nuclear segmentations.
+Processed Data Column Name	Au	Au_nuclear	CD11c	CD11c_nuclear	CD14	CD14_nuclear	CD163	CD163_nuclear	CD20	CD20_nuclear	CD3	CD31	CD31_nuclear	CD38	CD38_nuclear	CD3_nuclear	CD4	CD45	CD45RB	CD45RB_nuclear	CD45RO	CD45RO_nuclear	CD45_nuclear	CD4_nuclear	CD56	CD56_nuclear	CD57	CD57_nuclear	CD68	CD68_nuclear	CD69	CD69_nuclear	CD8	CD8_nuclear	CK17	CK17_nuclear	Calprotectin	Calprotectin_nuclear	ChyTr	ChyTr_nuclear	Collagen1	Collagen1_nuclear	ECAD	ECAD_nuclear	FAP	FAP_nuclear	FOXP3	FOXP3_nuclear	Fe	Fe_nuclear	Fibrontecin	Fibronectin_nuclear	GLUT1	GLUT1_nuclear	H3K27me3	H3K27me3_nuclear	H3K9ac	H3K9ac_nuclear	HLA1	HLA1_nuclear	HLADR	HLADR_nuclear	IDO	IDO_nuclear	Ki67	Ki67_nuclear	LAG3	LAG3_nuclear	Noodle	Noodle_nuclear	PD1	PD1_nuclear	PDL1	PDL1_nuclear	SMA	SMA_nuclear	TBET	TBET_nuclear	TCF1	TCF1_nuclear	TIM3	TIM3_nuclear	Vim	Vim_nuclear	area	area_nuclear	cell_size	cell_size_nuclear	centroid-0	centroid-0_nuclear	centroid-1	centroid-1_nuclear	centroid_dif	centroid_dif_nuclear	chan_115	chan_115_nuclear	chan_141	chan_141_nuclear	chan_39	chan_39_nuclear	chan_45	chan_45_nuclear	chan_48	chan_48_nuclear	convex_area	convex_area_nuclear	convex_hull_resid	convex_hull_resid_nuclear	eccentricity	eccentricity_nuclear	equivalent_diameter	equivalent_diameter_nuclear	label_image_name	label_id	label_nuclear_id	major_axis_equiv_diam_ratio	major_axis_equiv_diam_ratio_nuclear	major_axis_length	major_axis_length_nuclear	major_minor_axis_ratio	major_minor_axis_ratio_nuclear	minor_axis_length	minor_axis_length_nuclear	nc_ratio	nc_ratio_nuclear	num_concavities	num_concavities_nuclear	perim_square_over_area	perim_square_over_area_nuclear	perimeter	perimeter_nuclear	cell_meta_cluster	cell_cluster	cell_cluster_broad
+Processed Data Column Type	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	location	location	location	location	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	location	location	location	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	data	phenotype	phenotype	phenotype
+Processed Data Column Annotation Level	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image	image
+Processed Data Column Description	The Au expression in the whole cell	The Au expression in the cell nucleus	The CD11c expression in the whole cell	The CD11c expression in the cell nucleus	The CD14 expression in the whole cell	The CD14 expression in the cell nucleus	The CD163 expression in the whole cell	The CD163 expression in the cell nucleus	The CD20 expression in the whole cell	The CD20 expression in the cell nucleus	The CD3 expression in the whole cell	The CD31 expression in the whole cell	The CD31 expression in the cell nucleus	The CD38 expression in the whole cell	The CD38 expression in the cell nucleus	The CD3 expression in the cell nucleus	The CD4 expression in the whole cell	The CD45 expression in the whole cell	The CD45RB expression in the whole cell	The CD45RB expression in the cell nucleus	The CD45RO expression in the whole cell	The CD45RO expression in the cell nucleus	The CD45 expression in the cell nucleus	The CD4 expression in the cell nucleus	The CD56 expression in the whole cell	The CD56 expression in the cell nucleus	The CD57 expression in the whole cell	The CD57 expression in the cell nucleus	The CD68 expression in the whole cell	The CD68 expression in the cell nucleus	The CD69 expression in the whole cell	The CD69 expression in the cell nucleus	The CD8 expression in the whole cell	The CD8 expression in the cell nucleus	The CK17 expression in the whole cell	The CK17 expression in the cell nucleus	The Calprotectin expression in the whole cell	The Calprotectin expression in the cell nucleus	The ChyTr expression in the whole cell	The ChyTr expression in the cell nucleus	The Collagen1 expression in the whole cell	The Collagen1 expression in the cell nucleus	The ECAD expression in the whole cell	The ECAD expression in the cell nucleus	The FAP expression in the whole cell	The FAP expression in the cell nucleus	The FOXP3 expression in the whole cell	The FOXP3 expression in the cell nucleus	The Fe expression in the whole cell	The Fe expression in the cell nucleus	The Fibronectin expression in the whole cell	The Fibronectin expression in the cell nucleus	The GLUT1 expression in the whole cell	The GLUT1 expression in the cell nucleus	The H3K27me3 expression in the whole cell	The H3K27me3 expression in the cell nucleus	The H3K9ac expression in the whole cell	The H3K9ac expression in the cell nucleus	The HLA1 expression in the whole cell	The HLA1 expression in the cell nucleus	The HLADR expression in the whole cell	The HLADR expression in the cell nucleus	The IDO expression in the whole cell	The IDO expression in the cell nucleus	The Ki67 expression in the whole cell	The Ki67 expression in the cell nucleus	The LAG3 expression in the whole cell	The LAG3 expression in the cell nucleus	The Noodle expression in the whole cell	The Noodle expression in the cell nucleus	The PD1 expression in the whole cell	The PD1 expression in the cell nucleus	The PDL1 expression in the whole cell	The PDL1 expression in the cell nucleus	The SMA expression in the whole cell	The SMA expression in the cell nucleus	The TBET expression in the whole cell	The TBET expression in the cell nucleus	The TCF1 expression in the whole cell	The TCF1 expression in the cell nucleus	The TIM3 expression in the whole cell	The TIM3 expression in the cell nucleus	The Vim expression in the whole cell	The Vim expression in the cell nucleus	The whole cell area	The cell nucleus area	The whole cell size	The cell nucleus size	The x-coordinate of the whole cell	The x-coordinate of the cell nucleus	The y-coordinate of the whole cell	The y-coordinate of the nucleus	Normalized Euclidean distance between whole cell centroid and corresponding convex hull centroid	Normalized Euclidean distance between cell nucleus centroid and corresponding convex hull centroid	The chan_115 expression in the whole cell	The chan_115 expression in the cell nucleus	The chan_141 expression in the whole cell	The chan_141 expression in the cell nucleus	The chan_39 expression in the whole cell	The chan_39 expression in the cell nucleus	The chan_45 expression in the whole cell	The chan_45 expression in the cell nucleus	The chan_48 expression in the whole cell	The chan_48 expression in the cell nucleus	Area of the whole cell convex hull	Area of the cell nucleus convex hull	Difference between the whole cell convex area and area divided by convex area	Difference between the cell nucleus convex area and area divided by convex area	Ratio of the whole cell focal distance over major axis length	Ratio of the cell nucleus focal distance over major axis length	Diameter of circle with same area as the whole cell	Diameter of circle with same area as the cell nucleus	Image name from which cell originates from	Unique numerical label for whole cell	Unique numerical label for cell nucleus	Whole cell major axis length divided by equivalent diameter	Cell nucleus major axis length divided by equivalent diameter	Length of major axis of ellipse with same normalized second central moment as whole cell	Length of major axis of ellipse with same normalized second central moment as cell nucleus	Whole cell major axis length divided by minor axis length	Cell nucleus major axis length divided by minor axis length	Length of minor axis of ellipse with same normalized second central moment as whole cell	Length of minor axis of ellipse with same normalized second central moment as cell nucleus	Nuclear area divided by cell nucleus area	Nuclear area divided by cell nucleus area (duplicate, always applies only for nuclear segmentation, NaN in nc_ratio filled with 0)	Number of concavities in whole cell	Number of concavities in cell nucleus	Square of perimeter of whole cell divided by area	Square of perimeter of cell nucleus divided by area	Perimeter of object which approximates contour as line through centers of whole cell border pixels using 4-connectivity	Perimeter of object which approximates contour as line through centers of cell nucleus border pixels using 4-connectivity	The cluster assigned to the cell, done using FlowSOM and consensus clustering.	Broader groupings of the meta clusters, labels manually decided.	The overarching type of cell, broadest cluster grouping, labels manually decided (one of Cancer, Mono_Mac, Structural, T, Other, Granulocyte, B, NK).
+Processed Data Column Link To Assay File	label_image_name
